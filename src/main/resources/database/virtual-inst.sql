@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS sequncer-state;
+DROP TABLE IF EXISTS sequencer_state;
 
-CREATE TABLE sequencer-state
+CREATE TABLE sequencer_state
 (
-    sequencer-state-name varchar(16),
-    step-classes varchar(max)
-    PRIMARY KEY (sequencer-state-name)
+    sequencer_state_name varchar(16),
+    step_classes varchar(max)
+    PRIMARY KEY (sequencer_state_name)
 );
