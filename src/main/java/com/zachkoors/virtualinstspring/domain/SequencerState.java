@@ -1,5 +1,6 @@
 package com.zachkoors.virtualinstspring.domain;
 
+
 public class SequencerState {
     private String[] stepClasses;
     private String sequencerStateName;

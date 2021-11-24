@@ -1,7 +1,9 @@
 package com.zachkoors.virtualinstspring.DAO;
 
 import com.zachkoors.virtualinstspring.domain.SequencerState;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SequencerStateDAOImpl implements SequencerStateDAO{
 
     @Override
