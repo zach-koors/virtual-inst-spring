@@ -15,16 +15,7 @@ public class SequencerState {
         this.sequencerStateName = sequencerStateName;
         this.stepClasses = stepClasses;
     }
-
-    @Override
-    public String toString() {
-        String result = "'{";
-        for (String stepClass : getStepClasses()) {
-            result += "\"" + stepClass + "\", ";
-        }
-        result += "}'";
-        return result;
-    }
+    
 
     public String getSequencerStateName() {
         return sequencerStateName;
