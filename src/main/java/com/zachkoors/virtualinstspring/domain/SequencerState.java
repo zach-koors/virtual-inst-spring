@@ -7,6 +7,11 @@ public class SequencerState {
     private String sequencerStateName;
     private String[] stepClasses;
 
+    public SequencerState(String sequencerStateName, String[] stepClasses){
+        this.sequencerStateName = sequencerStateName;
+        this.stepClasses = stepClasses;
+    }
+
     @Override
     public String toString() {
         String result = "'{";
