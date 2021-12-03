@@ -26,19 +26,15 @@ public class SequencerStateJdbcDAO implements SequencerStateDAO{
     @Override
     public SequencerState retrieveSequencerState(String sequencerStateName) {
         SequencerState sequencerState = null;
-        String sql = "SELECT * \n" +
+        String sql = "SELECT step_classes \n" +
                 "FROM sequencer_state \n" +
                 "WHERE sequencer_state_name = ?";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, sequencerStateName);
         if (result.next()){
-            sequencerState = new SequencerState(result.getString(0), result.getObject(1, String[].class));
+            String[] stepClasses = (String[])result.getObject("step_classes");
+            sequencerState = new SequencerState(sequencerStateName, stepClasses);
         }
         return sequencerState;
     }
 
-    @Override
-    public boolean sequencerStateExists(SequencerState sequencerState) {
-
-        return false;
-    }
 }

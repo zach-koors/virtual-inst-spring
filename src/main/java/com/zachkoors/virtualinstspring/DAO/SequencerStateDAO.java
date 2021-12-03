@@ -7,6 +7,4 @@ public interface SequencerStateDAO {
     SequencerState saveSequencerState(SequencerState sequencerState);
 
     SequencerState retrieveSequencerState(String sequencerStateName);
-
-    boolean sequencerStateExists(SequencerState sequencerState);
 }
