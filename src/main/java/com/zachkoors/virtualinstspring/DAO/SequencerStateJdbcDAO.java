@@ -14,10 +14,10 @@ public class SequencerStateJdbcDAO implements SequencerStateDAO{
 
     @Override
     public SequencerState saveSequencerState(SequencerState sequencerState) {
-        String sql = "INSERT INTO sequencer_state (sequencer_state_name, step_classes)" +
-                "VALUES ('?', ?)";
+        String sql = "INSERT INTO sequencer_state (sequencer_state_name, step_classes) " +
+                "VALUES (?, ?)";
         String beatName = sequencerState.getSequencerStateName();
-        String stepClasses = sequencerState.toString();
+        String[] stepClasses = sequencerState.getStepClasses();
         jdbcTemplate.update(sql, beatName, stepClasses);
         return sequencerState;
     }
