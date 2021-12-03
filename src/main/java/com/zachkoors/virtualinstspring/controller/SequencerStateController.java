@@ -20,5 +20,10 @@ public class SequencerStateController {
         return dao.saveSequencerState(sequencerState);
     }
 
+    @RequestMapping(path = "/{sequencerStateName}", method = RequestMethod.GET)
+    public SequencerState retrieveSequencerState(@PathVariable String sequencerStateName){
+        return dao.retrieveSequencerState(sequencerStateName);
+    }
+
 
 }
