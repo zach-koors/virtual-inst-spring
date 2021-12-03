@@ -1,10 +1,21 @@
 package com.zachkoors.virtualinstspring.domain;
 
 
+import java.util.Arrays;
+
 public class SequencerState {
     private String sequencerStateName;
     private String[] stepClasses;
 
+    @Override
+    public String toString() {
+        String result = "'{";
+        for (String stepClass : getStepClasses()) {
+            result += "\"" + stepClass + "\", ";
+        }
+        result += "}'";
+        return result;
+    }
 
     public String getSequencerStateName() {
         return sequencerStateName;

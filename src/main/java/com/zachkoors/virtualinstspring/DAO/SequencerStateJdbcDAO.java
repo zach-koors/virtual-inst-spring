@@ -16,7 +16,8 @@ public class SequencerStateJdbcDAO implements SequencerStateDAO{
     public SequencerState saveSequencerState(SequencerState sequencerState) {
         String sql = "INSERT INTO sequencer_state (sequencer_state_name, step_classes)" +
                 "VALUES ('?', '{?}')";
-        
+        String beatName = sequencerState.getSequencerStateName();
+
         return sequencerState;
     }
 
