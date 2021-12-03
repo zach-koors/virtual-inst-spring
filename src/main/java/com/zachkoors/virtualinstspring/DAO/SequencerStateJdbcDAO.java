@@ -23,7 +23,8 @@ public class SequencerStateJdbcDAO implements SequencerStateDAO{
     }
 
     @Override
-    public SequencerState retrieveSequencerState(SequencerState sequencerState) {
+    public SequencerState retrieveSequencerState(String sequencerStateName) {
+
         return null;
     }
 
