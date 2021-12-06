@@ -6,6 +6,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import javax.sql.rowset.serial.SerialArray;
+import javax.sql.rowset.serial.SerialException;
+import java.sql.Array;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 @Component
 public class SequencerStateJdbcDAO implements SequencerStateDAO{
 
@@ -31,7 +38,8 @@ public class SequencerStateJdbcDAO implements SequencerStateDAO{
                 "WHERE sequencer_state_name = ?";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, sequencerStateName);
         if (result.next()){
-            String[] stepClasses = (String[])result.getObject("step_classes");
+            String resultString = result.getString("step_classes");
+            String[] stepClasses = resultString.replace("\"", "").split(",");
             sequencerState = new SequencerState(sequencerStateName, stepClasses);
         }
         return sequencerState;

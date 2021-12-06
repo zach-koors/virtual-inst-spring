@@ -4,6 +4,7 @@ package com.zachkoors.virtualinstspring.domain;
 import org.springframework.context.annotation.Bean;
 
 import java.beans.JavaBean;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SequencerState {
